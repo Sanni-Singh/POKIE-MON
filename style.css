@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background-color: #333;
+    header{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 20px 0;
+
+        h1{
+            font-size: 3rem;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .itemBox{
+            display: flex;
+            gap: 1rem;
+
+            #typeVal{
+                padding: 10px;
+                border-radius: 10px;
+                outline: none;
+                background-color: orangered;
+                border: none;
+                font-size: 1.2rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+            button{
+                padding: 10px;
+                border-radius: 10px;
+                background-color: blue;
+                border: none;
+                outline: none;
+                color: white;
+                font-size: 1rem;
+                font-weight: 800;
+                cursor: pointer;
+            }
+            #inputBox{
+                padding: 10px;
+                border-radius: 10px;
+                outline: none;
+                border: none;
+                font-size: 1rem;
+            }
+        }
+    }
+    main{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        padding-top: 30px;
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card{
+            width: 200px;
+            height: 300px;
+            border-radius: 20px;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+
+            p{
+                background-color: #fff;
+                text-align: center;
+                width: 100%;
+            }
+            h2{
+                text-align: center;
+            }
+            h6{
+                text-align: center;
+                background-color: #fff;
+                padding: 10px 20px;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+        }
+        .card:hover{
+            transform: rotateY(180deg);
+            transition-duration: 2s;
+        }
+    }
+}
