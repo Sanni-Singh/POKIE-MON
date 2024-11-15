@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Josefin+Sans&family=Playwrite+GB+S&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@
 body{
     width: 100%;
     background-color: #333;
+    font-family: "Playwrite GB S", serif;
     header{
         width: 100%;
         display: flex;
@@ -68,6 +70,7 @@ body{
             border-radius: 20px;
             background-color: yellow;
             display: flex;
+            padding-top: 10px;
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -84,9 +87,10 @@ body{
             h6{
                 text-align: center;
                 background-color: #fff;
-                padding: 10px 20px;
+                padding: 5px 20px;
                 border-radius: 20px;
                 cursor: pointer;
+                font-size: 1rem;
             }
         }
         .card:hover{
