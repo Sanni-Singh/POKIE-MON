@@ -25,43 +25,35 @@ const bgc = {
 };
 
 let arr = [];
-for(let k = 1; k < 100; k++){
+for(let k = 1; k < 150; k++){
     arr.push(`https://pokeapi.co/api/v2/pokemon/${k}`)
 }
-// console.log(arr);
-
-// console.log(bgc.water);
 async function displayPokkie(arr){
     box.innerHTML="";
     for(let j = 0; j < arr.length; j++){
         let data = await fetch(arr[j]);
         let res = await data.json();
-        // console.log(`${res.types[0].type.name}`);
-        // console.log(res);
-        
-        // let div = document.createElement('div');
-        // div.className="card";
-        // let p = document.createElement('p')
-        // p.innerText = res.id;
-        // div.appendChild(p);
-        // let img = document.createElement('img');
-        // img.setAttribute('src',res.sprites.front_default)
-        // div.appendChild(img)
-        // let h2 = document.createElement('h2');
-        // h2.innerText=res.name;
-        // div.appendChild(h2);
-        // let h6 = document.createElement('h6')
-        // h6.innerText = 'GRASS'
         
         let color= bgc[res.types[0].type.name];
-        console.log(bgc[color]);
-        
+        // console.log(bgc.${color});
+       
         let div = `
+
+            <div class="poke">
+            <div class="outer">
             <div class="card" style="background-color:${color}">
                 <p>#${res.id}</p>
                 <img src="${res.sprites.front_default}" alt="">
                 <h2>${res.name}</h2>
                 <h6 class="type">${res.types[0].type.name}</h6>
+            </div>
+                 <div class="back-part" style="background-color:${color}">
+                <p id="id">#${res.id}</p>
+                <img src="${res.sprites.back_shiny}" alt="${res.name}"></img>
+                <h2>${res.name}</h2>
+                <h3>${res.abilities[0].ability.name}</h3>
+            </div>
+            </div>
             </div>
         `
         let item = document.querySelector('.card');
@@ -71,7 +63,7 @@ async function displayPokkie(arr){
     }
 }
 function searchpoki(){
-    let allcard = document.querySelectorAll('.card');
+    let allcard = document.querySelectorAll('.poke');
     let val = inputBox.value.toLowerCase();
     allcard.forEach((e)=>{
         let db = e.querySelector("h2").textContent;
@@ -89,7 +81,7 @@ function filterThePokkie(){
         alert("plese select a type")
     }
     else {
-        let allcards = document.querySelectorAll('.card');
+        let allcards = document.querySelectorAll('.poke');
         allcards.forEach((ele)=>{
             console.log(ele);
             let cardtype=ele.querySelector('.type').innerText;
